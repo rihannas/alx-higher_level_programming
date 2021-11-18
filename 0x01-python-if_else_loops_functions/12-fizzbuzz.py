@@ -8,4 +8,7 @@ def fizzbuzz():
         elif (number % 3 == 0) and (number % 5 == 0):
             print("FizzBuzz", end="")
         else:
-            print("{}".format(number), end="")
+            if number != 99:
+                print(number, end=" ")
+            else:
+                print(end="")
