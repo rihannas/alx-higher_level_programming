@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-fizzbuzz = __import__('12-fizzbuzz').fizzbuzz
 def fizzbuzz():
     for number in range(1, 101):
         if number % 3 == 0:
