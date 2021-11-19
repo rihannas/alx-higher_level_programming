@@ -5,7 +5,7 @@ if __name__ == "__main__":
     if index == 1:
         print("0")
     else:
-        Sum = 0
+        total = 0
         for i in range(1, index):
-            Sum += int(argv[i])
-            print("{}".format(Sum))
+            total += int(argv[i])
+            print("{}".format(total))
