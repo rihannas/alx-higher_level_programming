@@ -11,11 +11,11 @@ if __name__ == "__main__":
     operator = argv[2]
 
     if operator == '+':
-        print(f"{} {} {} = {}".format(a, operator, b, add(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, add(a, b)))
     elif operator == '-':
-        print(f"{} {} {} = {}".format(a, operator, b, sub(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, sub(a, b)))
     elif operator == '*':
-        print(f"{} {} {} = {}".format(a, operator, b, mul(a, b)))
+        print("{} {} {} = {}".format(a, operator, b, mul(a, b)))
     elif operator == '/':
         print("{} {} {} = {}".format(a, operator, b, div(a, b)))
     else:
