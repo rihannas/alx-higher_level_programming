@@ -9,13 +9,13 @@ f __name__ == "__main__":
     b = int(argv[3])
     operator = argv[2]
 
-    if operator == '+':
+    if operator is '+':
         print(f"{a} {operator} {b} = {a + b}")
-    elif operator == '-':
+    elif operator is '-':
         print(f"{a} {operator} {b} = {a - b}")
-    elif operator == '*':
+    elif operator is '*':
         print(f"{a} {operator} {b} = {a * b}")
-    elif operator == '/':
+    elif operator is '/':
         print(f"{a} {operator} {b} = {a * b}")
     else:
         print("Unknown operator. Available operators: +, -, * and /")
