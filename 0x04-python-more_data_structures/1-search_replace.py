@@ -8,5 +8,5 @@ def search_replace(my_list, search, replace):
             if i == search:
                 new.append(replace)
             else: 
-                continue
+                new.append(i)
     return new
