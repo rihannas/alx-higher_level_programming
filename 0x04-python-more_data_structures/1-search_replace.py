@@ -1,10 +1,8 @@
 #!/usr/bin/python3
-def search_replace(my_list, search, replace):
-    if my_list == None:
-        return None
-    new = my_list.copy()
-    for i in new:
-        if i == search:
-            x = newList.index(i)
-            new[x] = replace
-    return new
+def common_elements(set_1, set_2):
+    common = []
+    for x in set_1:
+        for y in set_2:
+            if x is y:
+                common.append(x)
+    return common
