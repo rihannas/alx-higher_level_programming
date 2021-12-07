@@ -1,36 +1,24 @@
 #!/usr/bin/python3
-"""Module that defines a Square class"""
+"""module defines a Square class"""
 
 
 class Square:
-    """The class that defines a square"""
+    """class that defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializer function for a Square.
-
-        Args:
-            size (int): Size of the Square.
-            position (tuple): Position of the Square.
-        """
+        """Initializer the data."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """ Gets private __size attribute.
+        """Retrieves size."""
 
-        Returns:
-            The size of the square
-        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets a new value for __size attribute.
-
-        Args:
-            value (int): The value of the new size.
-        """
+        """Sets size to a value."""
         if isinstance(value, int) is not True:
             raise TypeError("size must be an integer")
 
@@ -41,20 +29,12 @@ class Square:
 
     @property
     def position(self):
-        """Gets private __position attribute.
-
-        Returns:
-            The position of the Square.
-        """
+        """Retrieves the position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets the value for the __position attribute.
-
-        Args:
-            value (int): The value of the new position.
-        """
+        """Sets the position to a value."""
         if isinstance(value, tuple) is False or len(value) is not 2:
             raise TypeError("position must be a tuple of 2 positive integers")
 
@@ -67,15 +47,12 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Calculates the area of the Square.
-
-        Returns:
-            The area of the Square.
-        """
-        return self.size ** 2
+        """area of square."""
+        result = self.__size * self.__size
+        return result
 
     def my_print(self):
-        """Prints the square with the character #, padded with spaces."""
+        """Prints the square with the character #"""
         if self.size is 0:
             print()
         else:
