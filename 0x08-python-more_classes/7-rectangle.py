@@ -25,35 +25,6 @@ class Rectangle:
         self.height = height
         Rectangle.number_of_instances += 1
 
-    def __str__(self):
-        """
-        Prints the rectangle represented by the combinations of
-        the `#` character.
-        """
-        result = ""
-
-        if self.__height is 0 or self.__width is 0:
-            return result
-
-        for i in range(0, self.__height):
-            result += "{:s}".format(self.__width * "#")
-
-            if i + 1 is not self.__height:
-                result += "\n"
-
-        return result
-
-    def __repr__(self):
-        """Return a string representation of a Rectangle instance
-        that is able to recreate a new instance by using eval()
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
-
-    def __del__(self):
-        """Deletes a Rectangle."""
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
-
     @property
     def width(self):
         """Retrieves the width of a Rectangle instance."""
@@ -107,3 +78,31 @@ class Rectangle:
 
         return perimeter
 
+    def __str__(self):
+        """
+        Prints the rectangle represented by the combinations of
+        the `#` character.
+        """
+        result = ""
+
+        if self.__height is 0 or self.__width is 0:
+            return result
+
+        for i in range(0, self.__height):
+            result += "{:s}".format(self.__width * "#")
+
+            if i + 1 is not self.__height:
+                result += "\n"
+
+        return result
+
+    def __repr__(self):
+        """Return a string representation of a Rectangle instance
+        that is able to recreate a new instance by using eval()
+        """
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """Deletes a Rectangle."""
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
