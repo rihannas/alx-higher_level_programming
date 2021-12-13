@@ -83,18 +83,15 @@ class Rectangle:
         Prints the rectangle represented by the combinations of
         the `#` character.
         """
-        result = ""
-
-        if self.__height is 0 or self.__width is 0:
-            return result
-
-        for i in range(0, self.__height):
-            result += "{:s}".format(self.__width * "#")
-
-            if i + 1 is not self.__height:
-                result += "\n"
-
-        return result
+         if self.__width == 0 or self.__height == 0:
+            return ""
+        string_r = ''
+        for i in range(self.__height):
+            for j in range(self.__width):
+                string_r += str(self.print_symbol)
+            if i < (self.height - 1):
+                string_r += '\n'
+        return string_r
 
     def __repr__(self):
         """Return a string representation of a Rectangle instance
