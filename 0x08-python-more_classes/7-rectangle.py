@@ -24,8 +24,8 @@ class Rectangle:
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
-    
-       def __str__(self):
+
+    def __str__(self):
         """
         Prints the rectangle represented by the combinations of
         the `#` character.
@@ -51,8 +51,8 @@ class Rectangle:
 
     def __del__(self):
         """Deletes a Rectangle."""
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @property
     def width(self):
@@ -106,3 +106,4 @@ class Rectangle:
         perimeter = (2 * self.__width) + (2 * self.__height)
 
         return perimeter
+
