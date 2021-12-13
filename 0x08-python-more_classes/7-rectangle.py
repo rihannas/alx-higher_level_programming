@@ -14,7 +14,7 @@ class Rectangle:
         Decremented during each instance deletion"""
 
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
@@ -110,5 +110,5 @@ class Rectangle:
 
     def __del__(self):
         """Deletes a Rectangle."""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
