@@ -72,5 +72,10 @@ class TestMaxInteger(unittest.TestCase):
         """Test with a parameter that's not a list: should raise a TypeError"""
         self.assertRaises(TypeError, max_integer, 0)
 
+    def test_max_middle(self):
+        l = [1, 2, 10, 3, 0]
+        result = max_integer(l)
+        self.assertEqual(result, 10)
+
 if __name__ == '__main__':
     unittest.main()
