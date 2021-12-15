@@ -35,16 +35,6 @@ Testing:
 	Traceback (most recent call last):
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 
-	>>> add_integer(1, float(inf) )
-	Traceback (most recent call last):
-	OverflowError: cannot convert float infinity to integer
-
-	>>> add_integer(1j, 1)
-	Traceback (most recent call last):
-    	TypeError: a must be a REAL Number integer
-
-	>>> add_integer(1, 1j)                                                          Traceback (most recent call last):                                              TypeError: a must be a REAL Number integer
-
 	>>> add_integer(float('NaN'))
 	Traceback (most recent call last):
 	ValueError: cannot convert float NaN to integer

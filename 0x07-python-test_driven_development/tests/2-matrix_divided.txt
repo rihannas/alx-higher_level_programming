@@ -24,13 +24,10 @@ Test
 	>>> matrix_divided([[1, 2], [3, 4]])
 	Traceback (most recent call last):
 	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
 	>>> matrix_divided()
 	Traceback (most recent call last):
 	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
-
-	>>> matrix_divided(2)
-	Traceback (most recent call last):           
-        TypeError: matrix_divided() missing 1 required positional argument: 'matrix'
 
 	>>> matrix_divided([[0, 1], [2, "one"]], 1)
 	Traceback (most recent call last):

@@ -26,15 +26,6 @@ Importing Function
 	Traceback (most recent call last):
 	TypeError: first_name must be a string
 
-	>>> say_my_name("Tony", "")
-	My name is Tony
-
-	>>> say_my_name("", "Spark"")
-	My name is  Spark
-
  	>>> say_my_name()
 	Traceback (most recent call last):
-	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
-
-	>>> say_my_name("". "")
-	My name is   
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name' 
