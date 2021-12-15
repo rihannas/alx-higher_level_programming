@@ -1,14 +1,25 @@
 #!/usr/bin/python3
+"""
+Module matrix_divided
+Args:
+    @matrix: a martix
+    @div: a number to divide the elements of a matrix.
+"""
+
 
 def matrix_divided(matrix, div):
-    
+    """
+    matrix_divided: divides a matrix by the div
+    Returns: a matrix divided by the number
+    """
+
     if not isinstance(matrix, list) or len(matrix) == 0 or not matrix[0]:
         raise TypeError("matrix must be a matrix (list of lists)" +
                         " of integers/float")
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    
+
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
 
@@ -27,8 +38,6 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists) " +
                                 "of integers/floats")
 
-
     new_matrix = [[round(x / div, 2) for x in row] for row in matrix]
 
     return new_matrix
-
