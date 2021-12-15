@@ -1,6 +1,12 @@
 #!/usr/bin/python3
+"""
+Module text_indentation
+Adds to lines after . : ?
+"""
+
 
 def text_indentation(text):
+    """Prints 2 lines after . or : or ?"""
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
