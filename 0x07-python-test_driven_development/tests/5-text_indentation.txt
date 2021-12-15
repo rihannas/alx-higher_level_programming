@@ -54,12 +54,9 @@ Test
 	Cat Dog Fish
 
 	>>> text_indentation("Cat Dog Fish.")
-	Cat Dog Fish
+	Cat Dog Fish.
 	<BLANKLINE>
 
-	>>> text_indentation("Hello.", 2)
-	Traceback (most recent call last):
-    	TypeError: text must be a string
 
 	>>> text_indentation("")
 
