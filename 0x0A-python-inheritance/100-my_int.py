@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-"""
-Defines the `add_attribute` function
+"""Module 100-my_int.
+Creates a class that inherits from int.
 """
 
 
-def add_attribute(obj, name, val):
+class MyInt(int):
+    """Class inheriting from int,
+    But reverses the behavior of != and ==.
     """
-    add_attribute - adds property (if possible) to an instance of a class
-    """
-    if hasattr(obj, "__dict__"):
-        setattr(obj, name, val)
-    else:
-        raise TypeError("can't add new attribute")
+
+    def __eq__(self, other):
+        """Equality becomes inequality."""
+
+        return super().__ne__(other)
+
+    def __ne__(self, other):
+        """Inequality becomes equality."""
+
+        return super().__eq__(other)
