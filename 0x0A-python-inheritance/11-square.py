@@ -14,6 +14,7 @@ class Square(Rectangle):
         """
         The constructor of the `Rectangle` class
         """
+
         super().__init__(size, size)
         self.integer_validator("size", size)
         self.__size = size
@@ -22,11 +23,12 @@ class Square(Rectangle):
         """
         Print magic method
         """
+
         return "[Square] {0:d}/{0:d}".format(self.__size)
 
     def area(self):
         """
         Returns the area of the square
         """
-        return self.__size * self.__size
 
+        return self.__size * self.__size
