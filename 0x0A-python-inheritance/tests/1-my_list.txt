@@ -1,23 +1,50 @@
-1. It should be imported correctly
->>> MyList = __import__('1-my_list').MyList
+The ``1-my_list`` module
+=============================
 
-2. It should create the empty list without errors
->>> a = MyList()
 
-3. It should create the non-empty list without errors
->>> a = MyList([1, 2, 3])
+Import the class:
 
-4. It should be printed correctly
->>> print(a)
-[1, 2, 3]
+    >>> MyList = __import__('1-my_list').MyList
 
-5. It should create the list with negative integers correctly
->>> a = MyList([-1, -2, -13])
+Test:
 
-6. It should print the list in order that it is stored with print()
->>> print(a)
-[-1, -2, -13]
+    >>> my_list = MyList()
 
-7. It should print the sorted list with print_sorted() method
->>> a.print_sorted()
-[-13, -2, -1]
+    >>> my_list
+    []
+
+    >>> my_list.append(1)
+
+    >>> my_list.append(4)
+
+    >>> my_list.append(2)
+
+    >>> my_list
+    [1, 4, 2]
+
+    >>> my_list.print_sorted()
+    [1, 2, 4]
+
+    >>> my_list
+    [1, 4, 2]
+
+    >>> my_list = MyList([3, 6, 2])
+
+    >>> my_list
+    [3, 6, 2]
+
+    >>> my_list.print_sorted()
+    [2, 3, 6]
+
+    >>> my_list = MyList("hello")
+    
+    >>> my_list
+    ['h', 'e', 'l', 'l', 'o']
+
+    >>> my_list.print_sorted()
+    ['e', 'h', 'l', 'l', 'o']
+
+    >>> new_l = MyList()
+
+    >>> new_l.print_sorted()
+    []
