@@ -21,3 +21,15 @@ class Base:
         elif id is None:
             Base.__nb_objects = Base.__nb_objects + 1
             self.id = Base.__nb_objects
+
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Returns the list of the JSON string representation
+        Args:
+            json_string: string representing a list of dictionaries
+        """
+        if not json_string:
+            return []
+
+        return json.loads(json_string)
