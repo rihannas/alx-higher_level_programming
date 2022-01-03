@@ -3,6 +3,7 @@
 Defines a Base class for other classes in the project.
 """
 
+import json
 
 class Base:
     """Class with:
