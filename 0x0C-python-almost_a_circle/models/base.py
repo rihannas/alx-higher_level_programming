@@ -22,7 +22,6 @@ class Base:
             Base.__nb_objects = Base.__nb_objects + 1
             self.id = Base.__nb_objects
 
-
     @staticmethod
     def from_json_string(json_string):
         """ Returns the list of the JSON string representation
@@ -33,3 +32,38 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ returns an instance with all attributes already set
+        Args:
+            cls: the reference to the class
+            dictionary: the double pointer to a dictionary
+        """
+        if cls.__name__ is "Square":
+            temp = cls(42)  # can't be called without attributes
+        if cls.__name__ is "Rectangle":
+            temp = cls(42, 42)  # can't be called without attributes
+
+        temp.update(**dictionary)  # pass the dictionary as a double pointer
+
+        return temp
+
+    @classmethod
+    def load_from_file(cls):
+        """ Returns a list of instances
+        Args:
+            cls: the reference to the class
+        """
+        try:
+            with open(cls.__name__ + ".json", "r") as a_file:
+                content = cls.from_json_string(a_file.read())
+
+                result = []
+                for el in content:
+                    result.append(cls.create(**el))
+
+                return result
+
+        except FileNotFoundError:
+            return []
