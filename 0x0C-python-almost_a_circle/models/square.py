@@ -52,15 +52,31 @@ class Square(Rectangle):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
-     @property
-        def size(self):
-            """ size getter
-            """
-            return self.width
+
+    def to_dictionary(self):
+        """ returns the dictionary representation
+            of a Square"""
+        res = {}
+        for key, val in self.__dict__.items():
+            key = key.replace("_Rectangle__", "")
+            key = "size" if key == "width" else key
+
+            if key == "height":
+                continue
+
+            res[key] = val
+
+        return res
+
+    @property
+    def size(self):
+        """ size getter
+        """
+        return self.width
 
     @size.setter
-        def size(self, val):
-            """ size setter
-            """
-            self.width = val
-            self.height = val
+    def size(self, val):
+        """ size setter
+        """
+        self.width = val
+        self.height = val
