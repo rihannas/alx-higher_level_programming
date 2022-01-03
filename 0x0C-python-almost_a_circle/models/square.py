@@ -26,7 +26,32 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(self.id,
                                                  self.x, self.y,
                                                  self.width)
-
+    
+    def update(self, *args, **kwargs):
+        """ updates the arguments of the instance
+        Args:
+            *args: variadic arguments list
+            **kwargs: double pointer to a dictionary in key:val format
+        """
+        if len(args):
+            for c, arg in enumerate(args):
+                if c is 0:
+                    self.id = arg
+                if c is 1:
+                    self.size = arg
+                if c is 2:
+                    self.x = arg
+                if c is 3:
+                    self.y = arg
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
      @property
         def size(self):
             """ size getter
