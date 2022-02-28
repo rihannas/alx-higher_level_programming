@@ -12,11 +12,10 @@ if (process.argv[2] === undefined) {
   let sqr = '';
 
   for (i = 0; i < x; i++) {
-    
     for (j = 0; j < x; j++) {
       sqr += 'X';
     }
     sqr += '\n';
   }
-  console.log(sqr);      
-};
+  console.log(sqr);
+}
