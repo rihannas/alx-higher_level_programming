@@ -3,10 +3,9 @@
 as an argument and lists all cities
 of that state, using the database"""
 
+import sys
+import MySQLdb
 if __name__ == '__main__':
-
-    import MYSQLdb
-    import sys
 
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
