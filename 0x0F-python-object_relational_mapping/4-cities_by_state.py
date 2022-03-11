@@ -1,23 +1,19 @@
 #!/usr/bin/python3
-"""a script that lists all cities from the database hbtn_0e_4_usa"""
+"""lists all cities from the database hbtn_0e_4_usa"""
 
-import MYSQLdb
-import sys
+if __name__ == '__main__':
 
-if __name__ == "__main__":
-    if len(argv) < 4:
-        print("Error: this script requires 3 arguments")
-        exit()
+    import MySQLdb
+    import sys
 
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    cursor = connection.cursor()
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
 
-    cursor.execute(("SELECT cities.id, cities.name, states.name FROM cities "
-                    "INNER JOIN states ON cities.state_id = states.id "
-                    "ORDER BY cities.id"))
-
-    rows = cursor.fetchall()
-    connection.close()
-
+    cur = db.cursor()
+    cur.execute("SELECT cities.id, cities.name, states.name\
+                FROM cities LEFT JOIN states\
+                ON states.id = cities.state_id\
+                ORDER BY cities.id ASC")
+    rows = cur.fetchall()
     for row in rows:
         print(row)
