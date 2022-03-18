@@ -10,7 +10,5 @@ if __name__ = "__main__":
 
     r = requests.get('https://api.github.com/user',
                          auth=(sys.argv[1], sys.argv[2]))
-    if r.status_code >= 400:
-        print('None')
-    else:
-        print(r.json().get('id'))
+    result = response.json()
+    print(result.get("id"))
