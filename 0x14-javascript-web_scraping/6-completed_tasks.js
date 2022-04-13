@@ -2,7 +2,7 @@
 // a scriipt that computes the number of tasks completed by user id.
 
 const request = require('request');
-const API_URL: 'https://jsonplaceholder.typicode.com/todos';
+const API_URL = 'https://jsonplaceholder.typicode.com/todos';
 
 request(API_URL, function (error, response, body) {
   if (error) {
