@@ -2,23 +2,24 @@
 // a scriipt that computes the number of tasks completed by user id.
 
 const request = require('request');
-const API_URL = 'https://jsonplaceholder.typicode.com/todos';
+const API_URL = process.argv[2];
+const result = {};
 
 request(API_URL, function (error, response, body) {
   if (error) {
     console.error(error);
   }
-  const dict = JSON.parse(body).reduce((acc, elem) => {
-    if (!acc[elem.userId]) {
-      if (elem.completed) {
-        acc[elem.userId] = 1;
+
+  if (response.statusCode === 200) {
+    JSON.parse(body).forEach(el => {
+      if (el.completed === true) {
+        if (result[el.userId] === undefined) {
+          result[el.userId] = 0;
+        }
+        result[el.userId]++;
       }
-    } else {
-      if (elem.completed) {
-        acc[elem.userId] += 1;
-      }
-    }
-    return acc;
-  }, {});
-  console.log(dict);
+    });
+  }
+
+  console.log(result);
 });
