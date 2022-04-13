@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// a script that computes the number of tasks completed by user id.
+// a scriipt that computes the number of tasks completed by user id.
 
 const request = require('request');
 const API_URL: 'https://jsonplaceholder.typicode.com/todos';
