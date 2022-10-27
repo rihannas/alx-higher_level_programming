@@ -10,3 +10,5 @@ def print_last_digit(number):
 
     print(last, end="")
     return last
+
+# getting the last digit could be done by diving the number by 10 and checking the reminder
