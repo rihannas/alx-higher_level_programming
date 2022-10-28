@@ -6,6 +6,9 @@ def no_c(my_string):
 
     if "C" in my_string:
         noC = my_string.replace("C", "")
+
+    else:
+        return my_string
     return noC
 
 
