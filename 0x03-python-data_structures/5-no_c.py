@@ -1,20 +1,9 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
-    if "c" in my_string:
-        noC = my_string.replace("c", "")
+    noC = ''
+    for n in (my_string):
+        if n != "c" and n != "C":
+            noC = noC + n  # concatenation :)
 
-    if "C" in my_string:
-        noC = my_string.replace("C", "")
-
-    else:
-        return my_string
     return noC
-
-
-# def no_c(my_string):
-#     new_string = ''
-#     for i in (my_string):
-#         if i != 'c' and i != 'C':
-#             new_string += i
-#     return new_string
