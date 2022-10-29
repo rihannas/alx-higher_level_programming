@@ -2,6 +2,9 @@
 def delete_at(my_list=[], idx=0):
 
     # new
+    idxRange = len(my_list) - 1
+    if idx < 0 or idx > idxRange:
+        return my_list
     new = my_list.copy()
     my_list.clear()
     for num in new:
