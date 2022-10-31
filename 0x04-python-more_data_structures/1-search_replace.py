@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-def common_elements(set_1, set_2):
-    common = []
-    for x in set_1:
-        for y in set_2:
-            if x is y:
-                common.append(x)
-    return common
+def search_replace(my_list, search, replace):
+    new = []
+    for n in my_list:
+        new.append(n)
+
+    for i in new:
+        if i == search:
+            idx = new.index(i)
+            new[idx] = replace
+    return new
