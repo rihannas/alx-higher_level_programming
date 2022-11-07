@@ -1,21 +1,41 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    newlist = []
-    result = 0
 
+    # new
+    lst = []
     for i in range(0, list_length):
         try:
-            result = my_list_1[i] / my_list_2[i]
+            c = my_list_1[i]/my_list_2[i]
+            lst.append(c)
         except ZeroDivisionError:
-            print("division by 0")
-            result = 0
+            print("division by zero")
+            c = 0
+            lst.append(c)
         except TypeError:
             print("wrong type")
-            result = 0
+            c = 0
+            lst.append(c)
         except IndexError:
             print("out of range")
-            result = 0
-        finally:
-            newlist.append(result)
+    return lst
 
-    return newlist
+    # old
+    # newlist = []
+    # result = 0
+
+    # for i in range(0, list_length):
+    #     try:
+    #         result = my_list_1[i] / my_list_2[i]
+    #     except ZeroDivisionError:
+    #         print("division by 0")
+    #         result = 0
+    #     except TypeError:
+    #         print("wrong type")
+    #         result = 0
+    #     except IndexError:
+    #         print("out of range")
+    #         result = 0
+    #     finally:
+    #         newlist.append(result)
+
+    # return newlist
