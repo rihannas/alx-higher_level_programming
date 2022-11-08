@@ -60,9 +60,3 @@ class Square:
         for i in range(0, self.__size):
 
             print(" " * self.__position[0] + "#" * self.__size)
-
-
-try:
-    my_square = Square(3, (1, -3))
-except Exception as e:
-    print(e)
