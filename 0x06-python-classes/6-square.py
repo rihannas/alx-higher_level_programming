@@ -48,11 +48,15 @@ class Square:
         """Prints the square with the character #"""
         if self.__size == 0:
             print()
-        for i in range(0, self.__size):
-            if self.__position[0] > 0:
-                dash = " " * self.__position[0]
-                print(dash, end="")
 
-            for j in range(0, self.__size):
-                print('#', end="")
-            print()
+        if self.__position[1] > 0:
+            for n in range(0, self.__position[1]):
+                print()
+
+        for i in range(0, self.__size):
+
+            print(" " * self.__position[0] + "#" * self.__size)
+
+
+my_square = Square(5, (3, 2))
+my_square.my_print()
