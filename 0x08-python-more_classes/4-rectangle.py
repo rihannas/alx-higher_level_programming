@@ -81,14 +81,14 @@ class Rectangle:
         """
         result = ""
 
-        if self.__height is 0 or self.__width is 0:
+        if self.__height == 0 or self.__width == 0:
             return result
 
         for i in range(0, self.__height):
-            result += "{:s}".format(self.__width * "#")
-
-            if i + 1 is not self.__height:
-                result += "\n"
+            for j in range(0, self.__width):
+                result = result + "#"
+            if i + 1 < self.__height:  # adding 1 helps remove the extra new line
+                result = result + "\n"
 
         return result
 
@@ -97,3 +97,17 @@ class Rectangle:
         that is able to recreate a new instance by using eval()
         """
         return "Rectangle({}, {})".format(self.__width, self.__height)
+
+
+my_rectangle = Rectangle(2, 4)
+print("Area: {} - Perimeter: {}".format(my_rectangle.area(), my_rectangle.perimeter()))
+
+print(str(my_rectangle))
+print(repr(my_rectangle))
+
+print("--")
+
+my_rectangle.width = 10
+my_rectangle.height = 3
+print(my_rectangle)
+print(repr(my_rectangle))
