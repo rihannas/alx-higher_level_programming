@@ -81,14 +81,14 @@ class Rectangle:
         """
         result = ""
 
-        if self.__height is 0 or self.__width is 0:
+        if self.__height == 0 or self.__width == 0:
             return result
 
         for i in range(0, self.__height):
-            result += "{:s}".format(self.__width * "#")
-
-            if i + 1 is not self.__height:
-                result += "\n"
+            for j in range(0, self.__width):
+                result = result + "#"
+            if i + 1 < self.__height:  # adding 1 helps remove the extra new line
+                result = result + "\n"
 
         return result
 
