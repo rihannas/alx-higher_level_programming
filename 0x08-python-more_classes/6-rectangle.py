@@ -96,7 +96,8 @@ class Rectangle:
         for i in range(0, self.__height):
             for j in range(0, self.__width):
                 result = result + "#"
-            if i + 1 < self.__height:  # adding 1 helps remove the extra new line
+            if i + 1 < self.__height:
+                # adding 1 helps remove the extra new line
                 result = result + "\n"
 
         return result
