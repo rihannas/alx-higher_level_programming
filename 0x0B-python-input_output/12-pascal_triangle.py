@@ -2,35 +2,15 @@
 """Module to create a Pascal triangle"""
 
 
-def next_list(list=[]):
-    """Function to generate the next_list"""
+def pascal_triangle(n: int):
+    """returns a pascal triangle"""
+    res = [[1]]
+    for i in range(n - 1):
+        template = [0] + res[-1] + [0]
+        row = []
+        for j in range(len(res[-1]) + 1):
+            value = template[j] + template[j + 1]
+            row.append(value)
+        res.append(row)
 
-    mask1 = list[:]
-    mask2 = list[:]
-
-    del mask1[0]
-    mask2.pop()
-    len_mask = int(len(mask1) / 2) + (len(mask1) % 2)
-    middle_result = [mask1[i] + mask2[i] for i in range(0, len_mask)]
-    reverse_result = middle_result[::-1]
-    if (len(list) % 2 == 0):
-        del reverse_result[0]
-    result = [1] + middle_result + reverse_result + [1]
-    return result
-
-
-def pascal_triangle(n):
-    """Function to create Pascal_triangle"""
-
-    if n <= 0:
-        return []
-    elif n == 1:
-        return [[1]]
-    elif n == 2:
-        return [[1], [1, 1]]
-    l = []
-    l.append([1])
-    l.append([1, 1])
-    for i in range(2, n):
-        l.append(next_list(l[i - 1]))
-    return l
+    return res
