@@ -53,28 +53,19 @@ class Rectangle(Base):
             *args: variadic arguments list
             **kwargs: double pointer to a dictionary in key:val format
         """
-        if len(args) > 0:
-            for arg, c in zip(args, range(5)):
-                if c is 0:
-                    self.id = arg
-                if c is 1:
-                    self.width = arg
-                if c is 2:
-                    self.height = arg
-                if c is 3:
-                    self.x = arg
-                if c is 4:
-                    self.y = arg
-                if c is None:
-                    break
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
-            return  # ignore kwargs
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        idx = 0
 
-        if len(kwargs) > 0:
-            for key, val in kwargs.items():
-                _key = key if key == "id" else "_Rectangle__{}".format(key)
-                if _key in self.__dict__:
-                    self.__dict__[_key] = val
+        for attr in attrs:
+            if idx == len(args):
+                break
+            else:
+                setattr(self, attr, args[idx])
+                idx += 1
 
     def to_dictionary(self):
         """ returns the dictionary representation
