@@ -40,15 +40,11 @@ class Rectangle(Base):
     def display(self):
         """ Displays the rectangle
         """
+        for _ in range(self.y):
+            print()
 
-        def display(self):
-            for i in range(self.y):
-                print()
-            for i in range(self.height):
-                print(" " * self.x, end="")
-                for j in range(self.width - 1):
-                    print('#', end='')
-                print('#')
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def update(self, *args, **kwargs):
         """ updates the arguments of the instance
