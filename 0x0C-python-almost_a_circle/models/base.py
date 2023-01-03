@@ -70,14 +70,10 @@ class Base:
             cls: the reference to the class
             dictionary: the double pointer to a dictionary
         """
-        if cls.__name__ is "Square":
-            temp = cls(42)  # can't be called without attributes
-        if cls.__name__ is "Rectangle":
-            temp = cls(42, 42)  # can't be called without attributes
 
-        temp.update(**dictionary)  # pass the dictionary as a double pointer
-
-        return temp
+        dummy = cls(5, 10)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
