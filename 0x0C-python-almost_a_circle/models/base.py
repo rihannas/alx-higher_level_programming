@@ -70,9 +70,13 @@ class Base:
             cls: the reference to the class
             dictionary: the double pointer to a dictionary
         """
+        if cls.__name__ == "Square":
+            dummy = cls(5)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(5, 10)  # can't be called without attributes
 
-        dummy = cls(5, 10)
-        dummy.update(**dictionary)
+        dummy.update(**dictionary)  # pass the dictionary as a double pointer
+
         return dummy
 
     @classmethod
