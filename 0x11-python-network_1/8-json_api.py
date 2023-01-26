@@ -25,7 +25,7 @@ if __name__ == "__main__":
     if json_res is None:
         print('No result')
     else:
-        print(f'[{json_res.id}] {json_res.name}')
+        print("[{}] {}".format(json_res["id"], json_res["name"]))
 
     # if len(sys.argv) > 1:
     #     query = sys.argv[1]
