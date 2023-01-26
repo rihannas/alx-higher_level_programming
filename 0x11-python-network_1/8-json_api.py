@@ -19,7 +19,7 @@ if __name__ == "__main__":
     res = requests.post(url, data={'q': query})
     try:
         json_res = res.json()
-    except:
+    except ValueError:
         print('Not a valid JSON')
 
     if json_res is None:
