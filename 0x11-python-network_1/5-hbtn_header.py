@@ -3,11 +3,10 @@
 and displays the value of the variable X-Request-Id
  in the response header"""
 import requests
-from sys import argv
+import sys
 
 
 if __name__ == "__main__":
 
-    url = argv[1]
-    res = requests.get(url)
-    print(res.headers['X-Request-Id'])
+    res = requests.get(sys.argv[1])
+    print(res.headers.get("X-Request-Id"))
