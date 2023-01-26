@@ -11,12 +11,12 @@ if __name__ == "__main__":
 
     url = 'http://0.0.0.0:5000/search_user'
 
-    if argv[1] is not None:
-        value = argv[1]
+    if len(argv) > 1:
+        query = argv[1]
     else:
-        value = ''
+        query = ""
 
-    res = requests.post(url, data={'q': value})
+    res = requests.post(url, data={'q': query})
     try:
         json_res = res.json()
     except:
